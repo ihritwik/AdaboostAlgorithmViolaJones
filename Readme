@@ -1,0 +1,59 @@
+
+In this Project, FDDB dataset is used and the script (Load_Dataset.py) to generate the dataset is inside the 'Data' directory.
+
+Next, 'hshukla_Proj2_task1.py' - this script is run to display haar features. More details of the functionality of this script is mentioned below.
+
+==========================================     Task 1   === ========================================  
+   
+To plot top 10 features of each of the 5 types of Haar-like feature and
+display the error of all individual weak classifiers.
+
+Step 1. Run "hshukla_Proj2_task1.py" to display errors corresponding to each of the 5  Haar-like features detected on the image and save the best features of all types.
+
+Results of this code can be viewed in the "/Results/BestFeatures"
+The snippet of the terminal after execution of this code is saved as 
+"/Results/output_task1.png"
+		
+				      		                
+Scripts for the following mentioned task reffered as Task-2: 
+		  1. python3 Train_ViolaJones.py --number_of_weak_clf 50
+		  2. python3 Test_Viola_Jones.py --model 50	
+		  3. python3 FaceDetect.py : Contains the train and test functions
+		  4. python3 hshukla_adaboost_viola_jones.py : Class written to perform 
+		     face classification using Adaboost technique.
+
+==========================================     Task 2    ========================================     
+
+# In this project, 6 models are developed and their corresponding pickle
+files are saved in the "Models" directory. (2.pkl, 5.pkl, 15.pkl, 20.pkl, 50.pkl and 100.pkl)
+
+# Users can directly run the "Test_Viola_Jones.py" file to evaluate the
+performance of the trained model on Test Dataset. Users should run the
+code from command line as follows:
+
+	Syntax	-> python3 Test_Viola_Jones.py --model <Name of the trained model>
+	Example -> python3 Test_Viola_Jones.py --model 50
+		{Name of the trained model is 50.pkl, but extension is not required while 			giving command line input at the time of execution}
+
+# DATASET :-> 100 positive and 100 negative images are used as the training images and are 
+	      located in "Data/Train/". 
+	   -> 20 posiitive and 20 negative images are used as Test images and are stored in 
+	      "Data/Test/"
+	   -> Refer to "/Data/Load_Dataset.py" to generate the dataset required for 
+	      Training.
+
+# TRAINING : Run "python3 Train_ViolaJones.py --number_of_weak_clf 50" from the command line
+             to train the Viola Jones classifier algorithm. 
+             --number_of_weak_clf is the command line argument that specifies the number of 
+             weak classifiers to train the model.
+             Resulting model will be saved in the project directory as "50.pkl" if the input
+             given by the user from command line is 50. The input must be an integer value.
+             
+             As we increase the number of weak classifiers to train the model, the accuracy 
+             keeps on increasing in the test dataset.
+
+# HYPERPARAMETERS : Number of weak classifiers.
+		   Test Accuracy on 25 Weak classifiers is 85%, whereas it is 92.5% when number
+		   of weak classifiers is 50
+
+
